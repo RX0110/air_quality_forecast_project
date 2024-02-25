@@ -25,7 +25,7 @@ site = st.sidebar.multiselect(
 
 param = st.sidebar.multiselect(
     "Select air pollutants: ",
-    options=df["parameter"].unique(),
+    options=df[df['site'].isin(site)]['parameter'].unique(),
     default="PM25"
 )
 
